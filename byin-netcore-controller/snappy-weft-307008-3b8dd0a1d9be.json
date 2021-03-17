@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "snappy-weft-307008",
+  "private_key_id": "3b8dd0a1d9beae4d318f78f2d46db96aa5d03963",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCYzGaXbgE8IVNs\nXjCMWzRMWaqU1qNJ299+6oqz2uxuW6oQ/0b81MP1z9TKM3hHY/yp5/iyB5UbSpS8\nh4IXblTC/j8EqED/IBvcJCNUNisds38Xyo+p3Uz7XpPr47GFs9lNa8DGQRMJIE0S\nLXt/OBoVOAedJfUSePQD5qyanuqVQbqy/Gt2TCjRRDAzNJbeGk20rImui+4NqfC+\nJ6f6Pg0y+ooAguMJwVGiKuRJzcc50uY+W7WkVmfbjIqdIcgumUG78J8yElHJu/0l\n40eL8jTHl6hzuOcHeX57CyWtxBNSTpakC0FaYLTcipr1iK3gxN+tGTVPbiKVPsQh\nUXGTisP7AgMBAAECggEALYisAfBsOckMnTysZwc+3InUBaq42mfFgILQdqyEzJZQ\nZeRM+UdGZlha5y7TZyLqxo80U4li69Eb5drT77uXUsyFZxPk2qJs6vtx88R4sM8u\nzp40lcA3Eqmqlx8xZdCkryevOOVnkM6paQNYzB6h1zTtP+1xzOFyhj8VrLYy3etU\nj7BIZOedPhIFtIUdgNO7Tu4OK5LxTOwl8j10qRecXXGAYqdCT+pgg7pxJpItrHDc\nAlL00b6EyT06EVArSexvZoCXTXZAc8YuFaSSZKM3BoXnkxogWg0psCnQgaglWtvD\nka0gZrlkx09pSJP9JvUTQc/Zg7yyZTTzlGv9PCyOsQKBgQDMm4OG/7NWblM1ySQ/\nr3bSF+kY5gmYW3PWfPfX9aJhuo4XWei45hN7XTsI724x/vs/WAL/sV5WT1cQPEiW\noKumUsKAg6gWSLHt6FwpqnJwiaWiPAsbFCV5yAfkD6dUWiuqwkQgHF45bu9MQBrd\nPK61yOl0jaKYrjoM9UYyGLfMPwKBgQC/LYJG1i5AZK5kbM5GlpG04sTKFH60maC8\n+QWREOZd1K4EOgUWW2fIMJtgiyuX3pt0NWbMzOK/d+QqM9UR26Lft7lASiTxyLtj\nDjL9JbftAuu7LIPHizsC+lO0ZgcNUOOuwN4YGELgFrKof7jFMscX19MCYZsCz+48\n70fdMY2JRQKBgGiMzpic8DaqCTrinPMt5blVHnbqlNyVXourL7naei8V9KVZ++D/\nL9VJvnDCZ7yEXj3v6xhcuafAwuw44Z6WWx+SCnFA1RMN8l1u7ikcP33h2BEePU6I\n7N1dqSqQFSC1Mrr+qXD/DearGPwNhaym5V9eWmyEMyFxZZhZfJT8rG5hAoGBAJfG\nDGAqV4u9oomNq/F0Rfbh9TMtNC4yrN55oEa7sPebCg/G9BT8uha/KAtsUU5/ZtDK\nOHOs0PMKvnQWtDg6M0MCu6pjcpMVNlb8hdRdZnheUkFFpNT9HvtNOrjEKyMSLb+l\n1Gwyjp0SyAFnbIv5tP+j0xxX2tVPuCZeHKJpXaE1AoGBAKD3XP8oG2W7z4da//5A\nAP2MVW+2iF/iGVZvQGKl1VBGzxT7xduEYOO3jo/du5gAndFM38XSedLjsV9zOPTr\nk2KrMQix5MDZhvi6zlwiINBjuru6xek8YKMKSWT26ol4mxi1LG5O3cHLkA+pjsPK\ncdwDLGpU9DKOcSiVrbY7x1S+\n-----END PRIVATE KEY-----\n",
+  "client_email": "buyin-account@snappy-weft-307008.iam.gserviceaccount.com",
+  "client_id": "102996429395167640318",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/buyin-account%40snappy-weft-307008.iam.gserviceaccount.com"
+}

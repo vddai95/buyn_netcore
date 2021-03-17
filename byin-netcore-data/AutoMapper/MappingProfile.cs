@@ -8,26 +8,19 @@ namespace byin_netcore_data.AutoMapper
     {
         public MappingProfile()
         {
-            CreateMap<BL.Product, DL.Product>();
-            CreateMap<DL.Product, BL.Product>();
+            CreateMap<BL.Product, DL.Product>().ReverseMap();
 
-            CreateMap<BL.ProductAndCategory, DL.ProductAndCategory>();
-            CreateMap<DL.ProductAndCategory, BL.ProductAndCategory>();
+            CreateMap<BL.ProductAndCategory, DL.ProductAndCategory>().ReverseMap();
 
-            CreateMap<BL.ProductAndImg, DL.ProductAndImg>();
-            CreateMap<DL.ProductAndImg, BL.ProductAndImg>();
+            CreateMap<BL.ProductAndImg, DL.ProductAndImg>().ReverseMap();
 
-            CreateMap<BL.Order, DL.Order>();
-            CreateMap<DL.Order, BL.Order>();
+            CreateMap<BL.Order, DL.Order>().ReverseMap();
 
-            CreateMap<BL.OrderEntity, DL.OrderEntity>();
-            CreateMap<DL.OrderEntity, BL.OrderEntity>();
+            CreateMap<BL.OrderEntity, DL.OrderEntity>().ReverseMap();
 
-            CreateMap<BL.ProductCategory, DL.ProductCategory>();
-            CreateMap<DL.ProductCategory, BL.ProductCategory>();
+            CreateMap<BL.ProductCategory, DL.ProductCategory>().ReverseMap();
 
-            CreateMap<BL.File.FilePath, DL.FilePath>();
-            CreateMap<DL.FilePath, BL.File.FilePath>();
+            CreateMap<BL.File.FilePath, DL.FilePath>().ReverseMap();
         }
     }
 }

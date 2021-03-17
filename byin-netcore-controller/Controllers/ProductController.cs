@@ -46,6 +46,7 @@ namespace byin_netcore.Controllers
             };
 
             var product = await _productBusiness.AddProductAsync(addProductInput).ConfigureAwait(false);
+            
             var response = new AddProductResponse
             {
                 ProductId = product.Id,
@@ -53,9 +54,15 @@ namespace byin_netcore.Controllers
                 PricePerUnit = product.PricePerUnit,
                 ProductName = product.ProductName,
                 QuantityAvailable = product.QuantityAvailable,
-                IllustrationImgUrls = product.IllustrationImgUrl.Select(url => url.FilePath.ImagePath).ToList(),
-                ProductCategories = product.ProductCategories.Select(c => c.ProductCategory.ProductCategoryName).ToList()
+                IllustrationImgUrls = product.IllustrationImgLink.Select(url => url.FilePath.ImagePath).ToList(),
+                ProductCategories = product.ProductCategoriesLink.Select(c => c.ProductCategory.ProductCategoryName).ToList()
             };
+            return Ok(response);
+        }
+
+        [HttpGet("/{productId}")]
+        public async Task<IActionResult> Get(int productId)
+        {
             return Ok(response);
         }
     }

@@ -53,10 +53,10 @@ namespace byin_netcore_business.UseCases.ProductBusiness
                 PricePerUnit = addProductInput.PricePerUnit,
                 ProductName = addProductInput.ProductName,
                 QuantityAvailable = addProductInput.QuantityAvailable,
-                IllustrationImgUrl = filePaths.Select(fp => new ProductAndImg { 
+                IllustrationImgLink = filePaths.Select(fp => new ProductAndImg { 
                     FilePathId = fp.Id
                 }).ToList(),
-                ProductCategories = productCategories.Select(pc => new ProductAndCategory
+                ProductCategoriesLink = productCategories.Select(pc => new ProductAndCategory
                 {
                     ProductCategoryId = pc.Id
                 }).ToList()

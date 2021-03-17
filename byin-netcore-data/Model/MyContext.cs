@@ -22,12 +22,12 @@ namespace byin_netcore_data.Model
             builder.Entity<FilePath>().HasIndex(f => f.CloudStorageKey).IsUnique();
 
             builder.Entity<ProductAndImg>().HasKey(pi => new { pi.ProductId, pi.FilePathId });
-            builder.Entity<ProductAndImg>().HasOne<Product>(pi => pi.Product).WithMany(p => p.IllustrationImgUrl).HasForeignKey(pi => pi.ProductId);
+            builder.Entity<ProductAndImg>().HasOne<Product>(pi => pi.Product).WithMany(p => p.IllustrationImgLink).HasForeignKey(pi => pi.ProductId);
             builder.Entity<ProductAndImg>().HasOne<FilePath>(pi => pi.FilePath).WithMany(f => f.Products).HasForeignKey(pi => pi.FilePathId);
 
             builder.Entity<ProductAndCategory>().HasKey(pc => new { pc.ProductId, pc.ProductCategoryId });
-            builder.Entity<ProductAndCategory>().HasOne<Product>(pc => pc.Product).WithMany(p => p.ProductCategories).HasForeignKey(pc => pc.ProductId);
-            builder.Entity<ProductAndCategory>().HasOne<ProductCategory>(pc => pc.ProductCategory).WithMany(c => c.Products).HasForeignKey(pc => pc.ProductCategoryId);
+            builder.Entity<ProductAndCategory>().HasOne<Product>(pc => pc.Product).WithMany(p => p.ProductCategoriesLink).HasForeignKey(pc => pc.ProductId);
+            builder.Entity<ProductAndCategory>().HasOne<ProductCategory>(pc => pc.ProductCategory).WithMany(c => c.ProductsLink).HasForeignKey(pc => pc.ProductCategoryId);
 
             base.OnModelCreating(builder);
         }

@@ -53,7 +53,7 @@ namespace byin_netcore_data.EntityRepository
             {
                 return await this.GetAllAsync().ConfigureAwait(false);
             }
-            return await _dbSet.Where(query).AsNoTracking().ToListAsync().ConfigureAwait(false);
+            return await _dbSet.Where(query).ToListAsync().ConfigureAwait(false);
         }
 
         public async Task<T> InsertAsync(T entity)

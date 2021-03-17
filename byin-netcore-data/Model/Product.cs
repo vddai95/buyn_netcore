@@ -5,11 +5,11 @@ namespace byin_netcore_data.Model
     public class Product
     {
         public int Id { get; set; }
-        public List<ProductAndCategory> ProductCategories { get; set; }
+        public List<ProductAndCategory> ProductCategoriesLink { get; set; }
         public double PricePerUnit { get; set; }
         public string ProductName { get; set; }
         public int QuantityAvailable { get; set; }
         public string Description { get; set; }
-        public List<ProductAndImg> IllustrationImgUrl { get; set; }
+        public List<ProductAndImg> IllustrationImgLink { get; set; }
     }
 }

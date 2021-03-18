@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "dd368673-2ebd-458e-a718-8ab0ba547082",
+		"name": "buyin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Email\" : \"vddai95@gmail.com\",\r\n    \"Password\" : \"Acnenr01!\",\r\n    \"PhoneNumber\" : \"0966925105\",\r\n    \"Roles\" : [\"admin\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/auth/register",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"vddai95@gmail.com\",\r\n    \"password\" : \"Acnenr01!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/auth/Authenticate",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"auth",
+						"Authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get available roles",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJlbWFpbCI6InZkZGFpOTVAZ21haWwuY29tIiwibmJmIjoxNjE1ODkwMzU2LCJleHAiOjE2MTY0OTUxNTYsImlhdCI6MTYxNTg5MDM1Nn0.W3T7ibE20Q-Gc8iSfSeliHCDLIC8rBJe9MdAb8uMGHU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/role",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"role"
+					]
+				},
+				"description": "Get available roles"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All ProductCategories",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJlbWFpbCI6InZkZGFpOTVAZ21haWwuY29tIiwibmJmIjoxNjE2MDQxNzM3LCJleHAiOjE2MTY2NDY1MzcsImlhdCI6MTYxNjA0MTczN30.-K4e1Jc1PDWfnUs4gqY7mP7rMloL0-N50a-MfTv1u1s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/product/GetAllProductCategories",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"product",
+						"GetAllProductCategories"
+					]
+				},
+				"description": "Get All ProductCategories"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Product Category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJlbWFpbCI6InZkZGFpOTVAZ21haWwuY29tIiwibmJmIjoxNjE1OTQ5ODI4LCJleHAiOjE2MTY1NTQ2MjgsImlhdCI6MTYxNTk0OTgyOH0.mySuCN9JM5QkRQ6HsSTGB-YsWBQu0saKWbON7HiGbl4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/product/AddProductCategory?ProductCategoryName=Laptop",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"product",
+						"AddProductCategory"
+					],
+					"query": [
+						{
+							"key": "ProductCategoryName",
+							"value": "Laptop"
+						}
+					]
+				},
+				"description": "Add Product Category"
+			},
+			"response": []
+		},
+		{
+			"name": "add product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJlbWFpbCI6InZkZGFpOTVAZ21haWwuY29tIiwibmJmIjoxNjE1OTQ5ODI4LCJleHAiOjE2MTY1NTQ2MjgsImlhdCI6MTYxNTk0OTgyOH0.mySuCN9JM5QkRQ6HsSTGB-YsWBQu0saKWbON7HiGbl4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "ProductCategories",
+							"value": "Laptop",
+							"type": "text"
+						},
+						{
+							"key": "PricePerUnit",
+							"value": "28000000",
+							"type": "text"
+						},
+						{
+							"key": "ProductName",
+							"value": "Asus Nitro 5 2022 - AN516",
+							"type": "text"
+						},
+						{
+							"key": "QuantityAvailable",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "Description",
+							"value": "laptop gaming 2022",
+							"type": "text"
+						},
+						{
+							"key": "IllustrationImgs",
+							"type": "file",
+							"src": "/C:/Users/vddai/Downloads/NITRO-5-2020-AN515-55-55E3-4.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/product/add",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"product",
+						"add"
+					]
+				},
+				"description": "add product"
+			},
+			"response": []
+		},
+		{
+			"name": "get product by category name",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJlbWFpbCI6InZkZGFpOTVAZ21haWwuY29tIiwibmJmIjoxNjE2MDQxNzM3LCJleHAiOjE2MTY2NDY1MzcsImlhdCI6MTYxNjA0MTczN30.-K4e1Jc1PDWfnUs4gqY7mP7rMloL0-N50a-MfTv1u1s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/product/Laptop",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"product",
+						"Laptop"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

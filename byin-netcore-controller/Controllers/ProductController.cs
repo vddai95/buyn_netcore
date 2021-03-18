@@ -76,5 +76,22 @@ namespace byin_netcore.Controllers
             });
             return Ok(response);
         }
+
+        [HttpGet()]
+        public async Task<IActionResult> Get()
+        {
+            var products = await _productBusiness.GetAllProductsAsync().ConfigureAwait(false);
+            var response = products.Select(p => new GetProductResponse
+            {
+                ProductId = p.Id,
+                Description = p.Description,
+                PricePerUnit = p.PricePerUnit,
+                ProductName = p.ProductName,
+                QuantityAvailable = p.QuantityAvailable,
+                IllustrationImgUrls = p.IllustrationImgLink.Select(url => url.FilePath.ImagePath).ToList(),
+                ProductCategories = p.ProductCategoriesLink.Select(c => c.ProductCategory.ProductCategoryName).ToList()
+            });
+            return Ok(response);
+        }
     }
 }

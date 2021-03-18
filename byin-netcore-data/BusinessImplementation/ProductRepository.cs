@@ -19,6 +19,15 @@ namespace byin_netcore_data.BusinessImplementation
 
         }
 
+        public async Task<List<Product>> GetAllProductsAsync()
+        {
+            var products = await _entityRepository.GetAll()
+                .Include(p => p.IllustrationImgLink).ThenInclude(l => l.FilePath)
+                .Include(p => p.ProductCategoriesLink).ThenInclude(l => l.ProductCategory)
+                .ToListAsync().ConfigureAwait(false);
+            return products.Select(p => _mapper.Map<BL.Product>(p)).ToList();
+        }
+
         public async Task<List<Product>> GetProductByCatergoryAsync(string catergoryName)
         {
             var products = await _entityRepository.GetWhere(

@@ -7,5 +7,6 @@ namespace byin_netcore_business.Interfaces
     public interface IProductRepository : IRepository<Product>
     {
         Task<List<Product>> GetProductByCatergoryAsync(string catergoryName);
+        Task<List<Product>> GetAllProductsAsync();
     }
 }

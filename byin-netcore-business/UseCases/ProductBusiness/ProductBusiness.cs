@@ -117,6 +117,21 @@ namespace byin_netcore_business.UseCases.ProductBusiness
             return await _productCategoryRepository.GetAllProductCategoriesAsync().ConfigureAwait(false);
         }
 
+        public async Task<List<Product>> GetAllProductsAsync()
+        {
+            var products = await _productRepository.GetAllProductsAsync().ConfigureAwait(false);
+            foreach (var product in products)
+            {
+                var isAuthorized = await _authorizationService.AuthorizeAsync(new Product(), BaseOperation.ReadAll).ConfigureAwait(false);
+                if (!isAuthorized.Succeeded)
+                {
+                    throw new HttpUnAuthorizedException();
+                }
+            }
+
+            return products;
+        }
+
         public async Task<List<Product>> GetProductsByCategoryAsync(string categoryName)
         {
             var products = await _productRepository.GetProductByCatergoryAsync(categoryName).ConfigureAwait(false);

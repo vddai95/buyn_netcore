@@ -13,11 +13,11 @@ namespace byin_netcore_business.UseCases.ProductBusiness
 {
     public class ProductBusiness : BaseBusiness, IProductBusiness
     {
-        private readonly IRepository<Product> _productRepository;
+        private readonly IProductRepository _productRepository;
         private readonly IFileBusiness _fileBusiness;
         private readonly IProductCategoryRepository _productCategoryRepository;
 
-        public ProductBusiness(IRepository<Product> productRepository, 
+        public ProductBusiness(IProductRepository productRepository, 
             IAuthorizationBusiness authorizationService,
             IFileBusiness fileBusiness,
             IProductCategoryRepository productCategoryRepository
@@ -115,6 +115,21 @@ namespace byin_netcore_business.UseCases.ProductBusiness
                 throw new HttpUnAuthorizedException();
             }
             return await _productCategoryRepository.GetAllProductCategoriesAsync().ConfigureAwait(false);
+        }
+
+        public async Task<List<Product>> GetProductsByCategoryAsync(string categoryName)
+        {
+            var products = await _productRepository.GetProductByCatergoryAsync(categoryName).ConfigureAwait(false);
+            foreach(var product in products)
+            {
+                var isAuthorized = await _authorizationService.AuthorizeAsync(product, BaseOperation.Read).ConfigureAwait(false);
+                if (!isAuthorized.Succeeded)
+                {
+                    throw new HttpUnAuthorizedException();
+                }
+            }
+
+            return products;
         }
 
         public async Task<Product> UpdateProductAsync(Product product)

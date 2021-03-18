@@ -5,6 +5,7 @@ using byin_netcore_data.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using BL = byin_netcore_business.Entity;
 using DL = byin_netcore_data.Model;
 
@@ -19,13 +20,13 @@ namespace byin_netcore_data.BusinessImplementation
 
         public async Task<List<ProductCategory>> GetAllProductCategoriesAsync()
         {
-            var categories = await _entityRepository.GetAllAsync().ConfigureAwait(false);
+            var categories = await _entityRepository.GetAll().ToListAsync().ConfigureAwait(false);
             return categories.Select(c => _mapper.Map<ProductCategory>(c)).ToList();
         }
 
         public async Task<List<ProductCategory>> GetProductCategoriesByNameAsync(List<string> categoryNames)
         {
-            var result = await this._entityRepository.GetWhereAsync(pc => categoryNames.Contains(pc.ProductCategoryName)).ConfigureAwait(false);
+            var result = await this._entityRepository.GetWhere(pc => categoryNames.Contains(pc.ProductCategoryName)).ToListAsync().ConfigureAwait(false);
             if(result is null || !result.Any())
             {
                 return new List<ProductCategory>();

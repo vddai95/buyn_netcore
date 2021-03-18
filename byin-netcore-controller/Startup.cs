@@ -156,7 +156,7 @@ namespace byin_netcore
             services.AddScoped<IEntityRepository<DL.ProductCategory>, EntityRepository<DL.ProductCategory>>();
             services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
 
-            services.AddTransient<IRepository<BL.Product>, Repository<BL.Product, DL.Product>>();
+            services.AddScoped<IProductRepository, ProductRepository>();
             services.AddTransient<IAuthorizationHandler, ProductCategoryAuthorizationHandler>();
             services.AddTransient<IAuthorizationHandler, ProductAuthorizationHandler>();
             services.AddScoped<IProductBusiness, ProductBusiness>();

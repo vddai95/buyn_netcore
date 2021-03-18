@@ -4,6 +4,7 @@ using byin_netcore_business.Interfaces;
 using byin_netcore_data.Interfaces;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using BL = byin_netcore_business.Entity;
 using DL = byin_netcore_data.Model;
 
@@ -18,7 +19,7 @@ namespace byin_netcore_data.BusinessImplementation
 
         public async Task<FilePath> GetFileByKeyInCloudStorageAsync(string keyStorage)
         {
-            var result = await _entityRepository.GetWhereAsync(fp => fp.CloudStorageKey == keyStorage).ConfigureAwait(false);
+            var result = await _entityRepository.GetWhere(fp => fp.CloudStorageKey == keyStorage).ToListAsync().ConfigureAwait(false);
             if(result is null || !result.Any())
             {
                 return null;

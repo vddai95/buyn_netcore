@@ -37,9 +37,9 @@ namespace byin_netcore_data.EntityRepository
             await DeleteAsync(entityToDelete);
         }
 
-        public async Task<List<T>> GetAllAsync()
+        public IQueryable<T> GetAll()
         {
-            return await _dbSet.ToListAsync().ConfigureAwait(false);
+            return _dbSet.AsQueryable();
         }
 
         public async Task<T> GetByIdAsync(object id)
@@ -47,13 +47,13 @@ namespace byin_netcore_data.EntityRepository
             return await _dbSet.FindAsync(id).ConfigureAwait(false);
         }
 
-        public async Task<List<T>> GetWhereAsync(Expression<Func<T, bool>> query)
+        public IQueryable<T> GetWhere(Expression<Func<T, bool>> query)
         {
             if(query is null)
             {
-                return await this.GetAllAsync().ConfigureAwait(false);
+                return this.GetAll();
             }
-            return await _dbSet.Where(query).ToListAsync().ConfigureAwait(false);
+            return _dbSet.Where(query);
         }
 
         public async Task<T> InsertAsync(T entity)

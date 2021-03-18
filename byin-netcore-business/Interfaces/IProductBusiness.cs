@@ -10,6 +10,7 @@ namespace byin_netcore_business.Interfaces
         Task<Product> AddProductAsync(AddProductInput product);
         Task DeleteProductAsync(Product product);
         Task<Product> UpdateProductAsync(Product product);
+        Task<List<Product>> GetProductsByCategoryAsync(string categoryName);
         Task<ProductCategory> AddProductCategoryAsync(string productCategory);
         Task<List<ProductCategory>> GetAllProductCategoriesAsync();
     }

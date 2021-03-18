@@ -60,9 +60,20 @@ namespace byin_netcore.Controllers
             return Ok(response);
         }
 
-        [HttpGet("/{productId}")]
-        public async Task<IActionResult> Get(int productId)
+        [HttpGet("{categoryName}")]
+        public async Task<IActionResult> Get(string categoryName)
         {
+            var products = await _productBusiness.GetProductsByCategoryAsync(categoryName).ConfigureAwait(false);
+            var response = products.Select(p => new GetProductResponse
+            {
+                ProductId = p.Id,
+                Description = p.Description,
+                PricePerUnit = p.PricePerUnit,
+                ProductName = p.ProductName,
+                QuantityAvailable = p.QuantityAvailable,
+                IllustrationImgUrls = p.IllustrationImgLink.Select(url => url.FilePath.ImagePath).ToList(),
+                ProductCategories = p.ProductCategoriesLink.Select(c => c.ProductCategory.ProductCategoryName).ToList()
+            });
             return Ok(response);
         }
     }

@@ -277,6 +277,37 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "get all product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJlbWFpbCI6InZkZGFpOTVAZ21haWwuY29tIiwibmJmIjoxNjE2MDQyODQwLCJleHAiOjE2MTY2NDc2NDAsImlhdCI6MTYxNjA0Mjg0MH0.LjmT8WTGUR5yMSjbNWoI95f36E6Enelqu4ZKPuy5wU0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/product/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
